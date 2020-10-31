@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import BindEvent from './bind-event';
 import FetchProfile from './fetch-profile';
 import FetchProfileWin from './fetch-profile-win';
+import SwitchMap from './switch-map';
 
 function App() {
   const handleClick$ = new Subject();
@@ -23,6 +24,7 @@ function App() {
       <BindEvent />
       <FetchProfile />
       <FetchProfileWin />
+      <SwitchMap/>
     </div>
   );
 }
