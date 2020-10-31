@@ -1,5 +1,6 @@
 # get-started
 - https://rxjs-dev.firebaseapp.com/guide/overview
+- https://cn.rx.js.org/
 
 ## hello dom event
 ```js
