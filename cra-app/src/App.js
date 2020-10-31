@@ -5,6 +5,7 @@ import BindEvent from './bind-event';
 import FetchProfile from './fetch-profile';
 import FetchProfileWin from './fetch-profile-win';
 import SwitchMap from './switch-map';
+import ZipAll from './zip-all';
 
 function App() {
   const handleClick$ = new Subject();
@@ -25,6 +26,7 @@ function App() {
       <FetchProfile />
       <FetchProfileWin />
       <SwitchMap/>
+      <ZipAll />
     </div>
   );
 }
