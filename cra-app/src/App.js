@@ -7,6 +7,7 @@ import FetchProfileWin from './fetch-profile-win';
 import SwitchMap from './switch-map';
 import ZipAll from './zip-all';
 import MapMergeAll from './map-merge-all';
+import AjaxOneByOne from './ajax-one-by-one';
 
 function App() {
   const handleClick$ = new Subject();
@@ -29,6 +30,7 @@ function App() {
       <SwitchMap/>
       <ZipAll />
       <MapMergeAll />
+      <AjaxOneByOne />
     </div>
   );
 }
