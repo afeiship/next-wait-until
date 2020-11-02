@@ -13,7 +13,7 @@ export default () => {
         obs$
           .pipe(
             startWith(10),
-            scan((next, res)=> next - 1),
+            // scan((next, res)=> next - 1),
             take(10)
           )
           .subscribe((res) => {
