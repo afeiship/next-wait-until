@@ -6,6 +6,7 @@ import FetchProfile from './fetch-profile';
 import FetchProfileWin from './fetch-profile-win';
 import SwitchMap from './switch-map';
 import ZipAll from './zip-all';
+import MapMergeAll from './map-merge-all';
 
 function App() {
   const handleClick$ = new Subject();
@@ -27,6 +28,7 @@ function App() {
       <FetchProfileWin />
       <SwitchMap/>
       <ZipAll />
+      <MapMergeAll />
     </div>
   );
 }
