@@ -8,6 +8,7 @@ import SwitchMap from './switch-map';
 import ZipAll from './zip-all';
 import MapMergeAll from './map-merge-all';
 import AjaxOneByOne from './ajax-one-by-one';
+import StartWith from './start-with';
 
 function App() {
   const handleClick$ = new Subject();
@@ -31,6 +32,7 @@ function App() {
       <ZipAll />
       <MapMergeAll />
       <AjaxOneByOne />
+      <StartWith />
     </div>
   );
 }
