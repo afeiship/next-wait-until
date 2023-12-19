@@ -21,7 +21,7 @@ nx.waitUntil = function(inOptions) {
       return options.fail();
     }
 
-    if (options.condition()) {
+    if (options.ife()) {
       clearTimeout(timer);
       return options.done();
     } else {

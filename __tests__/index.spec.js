@@ -16,7 +16,7 @@ describe('api.basic test', () => {
     }, 3 * 1000);
 
     nx.waitUntil({
-      condition: () => flag,
+      ife: () => flag,
       always() {
         console.log('count++');
         count++;
@@ -36,7 +36,7 @@ describe('api.basic test', () => {
 
     nx.waitUntil({
       timeout: 3 * 1000,
-      condition: () => flag,
+      ife: () => flag,
       always() {
         count++;
       },

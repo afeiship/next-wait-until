@@ -18,7 +18,7 @@ import '@jswork/next-wait-until';
 nx.waitUntil({
   timeout: 1000,
   interval:200,
-  condition: function () {
+  ife: function () {
     return window.$;
   },
   done: function () {
