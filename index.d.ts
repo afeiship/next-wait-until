@@ -1,8 +1,10 @@
+type Status = 'done' | 'fail' | 'always';
+
 interface Options {
   interval?: number;
   timeout?: number;
   condition?: () => boolean;
-  change?: (status: string) => void;
+  change?: (status: Status) => void;
   done?: () => void;
   fail?: () => void;
   always?: () => void;
