@@ -5,6 +5,7 @@ interface Options {
   done?: () => void;
   fail?: () => void;
   always?: () => void;
+  complete?: () => void;
 }
 
 interface NxStatic {

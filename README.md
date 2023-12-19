@@ -29,6 +29,9 @@ nx.waitUntil({
   },
   always: function () {
     console.log('always');
+  },
+  complete: function () {
+    console.log('complete');
   }
 });
 ```

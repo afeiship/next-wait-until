@@ -5,10 +5,11 @@ const defaults = {
   timeout: 10 * 1000,
   done: nx.noop,
   fail: nx.noop,
-  always: nx.noop
+  always: nx.noop,
+  complete: nx.noop
 };
 
-nx.waitUntil = function(inOptions) {
+nx.waitUntil = function (inOptions) {
   const options = nx.mix(null, defaults, inOptions);
   const startTime = Date.now();
   let timer;
@@ -18,11 +19,13 @@ nx.waitUntil = function(inOptions) {
     const now = Date.now();
     if (now - startTime > options.timeout) {
       clearTimeout(timer);
+      options.complete();
       return options.fail();
     }
 
     if (options.condition()) {
       clearTimeout(timer);
+      options.complete();
       return options.done();
     } else {
       timer = setTimeout(check, options.interval);
