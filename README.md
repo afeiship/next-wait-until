@@ -21,6 +21,9 @@ nx.waitUntil({
   condition: function () {
     return window.$;
   },
+  change: function (status) {
+    console.log('change', status);
+  },
   done: function () {
     console.log('done');
   },

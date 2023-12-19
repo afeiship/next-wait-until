@@ -2,6 +2,7 @@ interface Options {
   interval?: number;
   timeout?: number;
   condition?: () => boolean;
+  change?: (status: string) => void;
   done?: () => void;
   fail?: () => void;
   always?: () => void;
