@@ -6,8 +6,22 @@ test
 __tests__
 src
 build
+docs
 gulpfile.js
 
 .editorconfig
 .prettierrc
+Gemfile
+jest.config.js
+jest.setup.js
+LICENSE.txt
+Rakefile
+express.js
+.babelrc
+.vscode
+.release-it.json
+
+
+# vscode localhistory
 .history
+.release-it.json
