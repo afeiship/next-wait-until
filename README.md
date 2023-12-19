@@ -15,7 +15,22 @@ yarn add @jswork/next-wait-until
 ```js
 import '@jswork/next-wait-until';
 
-//DOCS here!
+nx.waitUntil({
+  timeout: 1000,
+  interval:200,
+  condition: function () {
+    return window.$;
+  },
+  done: function () {
+    console.log('done');
+  },
+  fail: function () {
+    console.log('fail/timeout');
+  },
+  always: function () {
+    console.log('always');
+  }
+});
 ```
 
 ## license

@@ -3,28 +3,33 @@ import nx from '@jswork/next';
 const defaults = {
   interval: 200,
   timeout: 10 * 1000,
-  onChange: nx.noop
+  done: nx.noop,
+  fail: nx.noop,
+  always: nx.noop
 };
 
-nx.waitUntil = function(inConditionFn, inOptions) {
+nx.waitUntil = function(inOptions) {
   const options = nx.mix(null, defaults, inOptions);
+  const startTime = Date.now();
+  let timer;
 
-  return new Promise((resolve, reject) => {
-    const startTime = Date.now();
-
-    function check() {
-      options.onChange();
-      const now = Date.now();
-      if (now - startTime > options.timeout) return reject(new Error('Timeout'));
-      if (inConditionFn()) {
-        resolve();
-      } else {
-        setTimeout(check, options.interval);
-      }
+  function check() {
+    options.always();
+    const now = Date.now();
+    if (now - startTime > options.timeout) {
+      clearTimeout(timer);
+      return options.fail();
     }
 
-    check();
-  });
+    if (options.condition()) {
+      clearTimeout(timer);
+      return options.done();
+    } else {
+      timer = setTimeout(check, options.interval);
+    }
+  }
+
+  check();
 };
 
 if (typeof module !== 'undefined' && module.exports && typeof wx === 'undefined') {
