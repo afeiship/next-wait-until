@@ -1,6 +1,6 @@
 {
   "name": "@jswork/next-wait-until",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Wait until for next.",
   "homepage": "https://js.work",
   "author": {
@@ -43,5 +43,11 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org"
-  }
+  },
+  "keywords": [
+    "loop",
+    "next",
+    "until",
+    "wait"
+  ]
 }
