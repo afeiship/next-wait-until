@@ -16,21 +16,21 @@ nx.waitUntil = function (inOptions) {
   let timer;
 
   function check() {
-    options.always();
     options.change('always');
+    options.always();
     const now = Date.now();
     if (now - startTime > options.timeout) {
       clearTimeout(timer);
-      options.complete();
       options.change('fail');
-      return options.fail();
+      options.fail();
+      return options.complete();
     }
 
     if (options.condition()) {
       clearTimeout(timer);
-      options.complete();
       options.change('done');
-      return options.done();
+      options.done();
+      return options.complete();
     } else {
       timer = setTimeout(check, options.interval);
     }
